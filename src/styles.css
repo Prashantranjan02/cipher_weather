@@ -1,7 +1,13 @@
 body {
-  background-image: radial-gradient(
-    circle farthest-corner at 83.7% 4.3%,
-    rgba(173, 0, 171, 1) 0%,
-    rgba(15, 51, 92, 1) 90%
-  );
+  background: #6441a5; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2a0845,
+    #462b77
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2a0845,
+    #6441a5
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
