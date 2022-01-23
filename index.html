@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="search-bar">
+        <form>
+          <input
+            type="text"
+            id="place"
+            class="form-control"
+            placeholder="Enter your City"
+          />
+          <input type="submit" id="submit" />
+          <button id="current-location">
+            <img src="img/your-location.png" width="30px" />
+          </button>
+        </form>
+      </div>
+      <div class="current-container">
+        <div class="row">
+          <div class="column" id="place-time-day">
+            <h3>Tokyo, JP</h3>
+            <h5>Thu, 10th Dec, 2022</h5>
+            <h1>10:30</h1>
+          </div>
+          <div class="column" id="icon-details">
+            <img src="img/01d.png" width="180px" />
+          </div>
+          <div class="column" id="weather-details">
+            <h3>Curent Temperature</h3>
+            <h1>26<span class="deg-symbol">&deg</span>C</h1>
+            <h3>
+              <span class="temp-conversion">
+                <a href="#"> &degF </a> | <a href="#"> &degC </a></span
+              >
+            </h3>
+          </div>
+        </div>
+        <h3>
+          Highest:
+          <span id="values"><span id="high">29</span>&degC</span> &nbsp; |
+          &nbsp; Lowest:
+          <span id="values"><span id="low">20</span>&degC</span> &nbsp; | &nbsp;
+          Humidity:
+          <span id="values"><span id="humidity">70</span>%</span> &nbsp; |
+          &nbsp; Wind Speed:
+          <span id="values"><span id="wind">2</span>mph</span>
+        </h3>
+      </div>
+      <div class="week-forecast">
+        <div class="row">
+          <div class="column">
+            <div class="card">
+              <img src="img/01d.png" width="90%" />
+              <h3>Monday</h3>
+              <h4>26&degC | 30&degC</h4>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <img src="img/04d.png" width="90%" />
+              <h3>Monday</h3>
+              <h4>26&degC | 30&degC</h4>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <img src="img/10d.png" width="90%" />
+              <h3>Monday</h3>
+              <h4>26&degC | 30&degC</h4>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <img src="img/13n.png" width="90%" />
+              <h3>Monday</h3>
+              <h4>26&degC | 30&degC</h4>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <img src="img/11d.png" width="90%" />
+              <h3>Monday</h3>
+              <h4>26&degC | 30&degC</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="attribution">
+      <a href="#">Open Source Code</a> by Vardhini
+    </footer>
+  </body>
+</html>
