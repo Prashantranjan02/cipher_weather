@@ -51,6 +51,7 @@ body {
   border-color: #099fff;
   font-weight: bold;
   font-family: "Fredoka One", cursive;
+  color: white;
 }
 
 #submit {
@@ -232,7 +233,7 @@ a {
 
 .card:hover {
   border-color: #099fff;
-  border-width: 2px;
+  border-width: 1px;
   transition: ease-in-out 4ms;
 }
 
