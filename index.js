@@ -81,14 +81,16 @@ function getTemp(response) {
   /*currentTemp.innerHTML = `${Math.round(response.data.main.temp)}&degC`;*/
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
-  /*document.querySelector("#high").innerHTML = response.data.main.temp_max;
-  document.querySelector("#low").innerHTML = response.data.main.temp_min;
+  document.querySelector("#high").innerHTML = Math.round(
+    response.data.main.temp_max
+  );
+  document.querySelector("#low").innerHTML = Math.round(
+    response.data.main.temp_min
+  );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#pressure").innerHTML = response.data.main.pressure;
-  document.querySelector("#clouds").innerHTML = response.data.clouds.all;
   document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.spee
-  );*/
+    response.data.wind.speed
+  );
 }
 
 function showCurrentLocation(position) {
