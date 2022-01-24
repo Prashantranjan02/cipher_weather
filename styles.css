@@ -140,7 +140,7 @@ body {
   text-align: left;
   margin: 0;
   padding: 0;
-  padding-left: 3vw;
+  padding-left: 1vw;
 }
 
 #place-time-day h5 {
@@ -148,7 +148,7 @@ body {
   padding: 0;
   margin: 0;
   text-align: left;
-  padding-left: 2vw;
+  padding-left: 1vw;
   font-size: 17px;
 }
 #weather-details {
@@ -232,7 +232,7 @@ a {
 
 .card:hover {
   border-color: #099fff;
-  border-width: 1.5px;
+  border-width: 2px;
   transition: ease-in-out 4ms;
 }
 
@@ -276,4 +276,8 @@ footer {
   margin: 1vw;
   padding: 1vw;
   font-size: 18px;
+}
+
+footer a {
+  color: #099fff;
 }

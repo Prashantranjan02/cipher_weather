@@ -5,12 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
   </head>
   <body>
     <main>
       <div class="search-bar">
-        <form>
+        <form id="form">
           <input
             type="text"
             id="place"
@@ -26,7 +27,7 @@
       <div class="current-container">
         <div class="row">
           <div class="column" id="place-time-day">
-            <h3>Tokyo, JP</h3>
+            <h3><span id="city">Tokyo</span>, <span id="country">JP</span></h3>
             <h5 id="date">Thu, 10th Dec, 2022</h5>
             <h1 id="time">10:30</h1>
           </div>
@@ -96,7 +97,8 @@
       </div>
     </main>
     <footer id="attribution">
-      <a href="#">Open Source Code</a> by Vardhini
+      <a href="https://github.com/vardhinii/Weather-App">Open Source Code</a> by
+      Vardhini
     </footer>
     <script src="index.js"></script>
   </body>
