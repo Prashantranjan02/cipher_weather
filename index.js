@@ -35,3 +35,27 @@ timeElement.innerHTML = `${hours}:${minutes}`;
 
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = `${day},&nbsp; ${todayDate} ${month},&nbsp; ${year}`;
+
+function getInF(event) {
+  event.preventDefault();
+  let tempinC = 26;
+  let tempinF = (tempinC * 9) / 5 + 32;
+  console.log("tempinF");
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${tempinF}&degF`;
+}
+
+let viewinF = document.querySelector("#f");
+viewinF.addEventListener("click", getInF);
+
+function getInC(event) {
+  event.preventDefault();
+  let tempinF = 78.8;
+  let tempinC = ((tempinF - 32) * 5) / 9;
+  console.log("tempinC");
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${tempinC}&degC`;
+}
+
+let viewinC = document.querySelector("#c");
+viewinC.addEventListener("click", getInC);
