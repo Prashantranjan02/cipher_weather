@@ -78,7 +78,7 @@ city.addEventListener("submit", getCity);
 function getTemp(response) {
   console.log(response.data);
   let currentTemp = document.querySelector("#current-temp");
-  /*currentTemp.innerHTML = `${Math.round(response.data.main.temp)}&degC`;*/
+  currentTemp.innerHTML = `${Math.round(response.data.main.temp)}&degC`;
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#high").innerHTML = Math.round(
