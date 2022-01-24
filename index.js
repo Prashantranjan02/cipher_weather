@@ -36,30 +36,6 @@ timeElement.innerHTML = `${hours}:${minutes}`;
 let dateElement = document.querySelector("#date");
 dateElement.innerHTML = `${day},&nbsp; ${todayDate} ${month},&nbsp; ${year}`;
 
-function getInF(event) {
-  event.preventDefault();
-  let tempinC = 26;
-  let tempinF = (tempinC * 9) / 5 + 32;
-  console.log("tempinF");
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${tempinF}&degF`;
-}
-
-let viewinF = document.querySelector("#f");
-viewinF.addEventListener("click", getInF);
-
-function getInC(event) {
-  event.preventDefault();
-  let tempinF = 78.8;
-  let tempinC = ((tempinF - 32) * 5) / 9;
-  console.log("tempinC");
-  let currentTemp = document.querySelector("#current-temp");
-  currentTemp.innerHTML = `${tempinC}&degC`;
-}
-
-let viewinC = document.querySelector("#c");
-viewinC.addEventListener("click", getInC);
-
 function getCity(event) {
   event.preventDefault();
   let changeCity = document.querySelector("#place");
@@ -77,8 +53,11 @@ city.addEventListener("submit", getCity);
 
 function getTemp(response) {
   console.log(response.data);
+  tempinC = Math.round(response.data.main.temp);
+
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)}&degC`;
+
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#country").innerHTML = response.data.sys.country;
   document.querySelector("#high").innerHTML = Math.round(
@@ -111,3 +90,24 @@ function getCurrentLocation(event) {
 
 let currentLocationButton = document.querySelector("#current-location");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+
+let tempinC = null;
+
+function getInF(event) {
+  event.preventDefault();
+  let tempinF = (tempinC * 9) / 5 + 32;
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${Math.round(tempinF)}&degF`;
+}
+
+let viewinF = document.querySelector("#f");
+viewinF.addEventListener("click", getInF);
+
+function getInC(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+  currentTemp.innerHTML = `${Math.round(tempinC)}&degC`;
+}
+
+let viewinC = document.querySelector("#c");
+viewinC.addEventListener("click", getInC);
