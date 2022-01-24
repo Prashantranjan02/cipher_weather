@@ -274,11 +274,16 @@ a {
 
 footer {
   text-align: center;
-  margin: 1vw;
+  margin: 0.5vw;
   padding: 1vw;
   font-size: 18px;
 }
 
 footer a {
   color: #099fff;
+}
+
+footer .emoji {
+  color: initial !important;
+  font-style: initial !important;
 }
