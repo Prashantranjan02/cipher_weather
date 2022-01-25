@@ -42,7 +42,7 @@ function getCity(event) {
   displayCity(changeCity.value);
 }
 
-displayCity("Chennai");
+displayCity("New York");
 
 function displayCity(city) {
   let apiKey = "2fa9ddec71ce08d23a59a79b1d873ee1";
