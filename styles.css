@@ -262,6 +262,11 @@ body {
   letter-spacing: 2px;
 }
 
+.card .min {
+  color: #ff0099;
+  font-size: 15px;
+}
+
 footer {
   text-align: center;
   margin: 0.5vw;

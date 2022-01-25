@@ -42,6 +42,8 @@ function getCity(event) {
   displayCity(changeCity.value);
 }
 
+displayCity("Chennai");
+
 function displayCity(city) {
   let apiKey = "2fa9ddec71ce08d23a59a79b1d873ee1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -54,7 +56,6 @@ city.addEventListener("submit", getCity);
 function getTemp(response) {
   console.log(response.data);
   tempinC = Math.round(response.data.main.temp);
-
   let currentTemp = document.querySelector("#current-temp");
   currentTemp.innerHTML = `${Math.round(response.data.main.temp)}&degC`;
 
@@ -73,6 +74,50 @@ function getTemp(response) {
   let iconElement = document.querySelector("#icon-current");
   iconElement.setAttribute("src", `img/${response.data.weather[0].icon}.png`);
   iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+  getForecast(response.data.coord);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "2fa9ddec71ce08d23a59a79b1d873ee1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+          <div class="column">
+            <div class="card">
+              <img src="img/${
+                forecastDay.weather[0].icon
+              }.png" id="icon1" width="90%" />
+              <h3 id="day1">${formatDay(forecastDay.dt)}</h3>
+              <h4>
+                <span class="min">${Math.round(forecastDay.temp.min)}° </span>|
+                <span class="max">${Math.round(forecastDay.temp.max)}° </span>
+              </h4>
+            </div>
+          </div>
+    `;
+    }
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 function showCurrentLocation(position) {
@@ -111,3 +156,5 @@ function getInC(event) {
 
 let viewinC = document.querySelector("#c");
 viewinC.addEventListener("click", getInC);
+
+displayCity("New York");
