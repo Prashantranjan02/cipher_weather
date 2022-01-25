@@ -42,6 +42,7 @@ body {
   font-weight: bold;
   font-family: "Fredoka One", cursive;
   color: white;
+  letter-spacing: 2px;
 }
 
 #submit {
@@ -270,12 +271,20 @@ body {
 footer {
   text-align: center;
   margin: 0.5vw;
-  padding: 1vw;
+  margin-bottom: 0vw;
+  padding-bottom: 0.2vw;
+  padding: 0.5vw;
   font-size: 18px;
+  letter-spacing: 1.3px;
+}
+
+.attribution {
+  font-size: 10px;
 }
 
 footer a {
-  color: #099fff;
+  color: #ff0099;
+  text-decoration: none;
 }
 
 footer .emoji {
